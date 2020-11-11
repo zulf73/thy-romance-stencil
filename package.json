@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@trendmicro/react-sidenav": "^0.5.0",
     "immutability-helper": "^2.7.0",
     "lodash.flow": "^3.5.0",
-    "react": "^16.4.0",
+    "react": "^16.14.0",
     "react-dnd": "^4.0.2",
     "react-dnd-html5-backend": "^4.0.2",
     "react-dom": "^16.4.0",
