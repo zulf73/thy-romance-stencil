@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { DropTarget } from 'react-dnd';
+import Groupchat from './Groupchat';
 
 function collect(connect, monitor) {
   return {
@@ -16,7 +17,7 @@ class Target extends Component {
 
     return connectDropTarget(
       <div className="target" style={{ background: backgroundColor }}>
-        Target
+        <Groupchat />
       </div>
     );
   }
