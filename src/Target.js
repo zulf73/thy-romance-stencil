@@ -12,7 +12,7 @@ function collect(connect, monitor) {
 
 class Target extends Component {
   render() {
-    const { connectDropTarget, hovered, item } = this.props;
+    const { connectDropTarget, hovered, tasteItem } = this.props;
     const backgroundColor = hovered ? 'lightgreen' : 'white';
 
     return connectDropTarget(
