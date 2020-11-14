@@ -7,7 +7,8 @@ class Groupchat extends React.Component {
 this.state = {
       receiverID: "",
       messageText: null,
-      groupMessage: [],
+    groupMessage: [],
+    cls: [],
       user: {},
       isAuthenticated: true
     };
@@ -67,10 +68,29 @@ messageListener = () => {
         }
       );
     });
-  };
+};
+
+messageClassifier = ( textClassifier ) => {
+    chat.addMessageListener((data,error) => {
+	if (error) {
+	    return console.log(`error: ${error}`);
+	}
+	// do whatever processing with textCLassifier
+	// such as setting state
+	var classification = textClassifier( data )
+	this.setState(
+            prevState => ({
+		cls: [...prevState.cls, classification]
+            })
+	);
+	
+    });
+};
+    
 componentDidMount() {
     this.getUser();
     this.messageListener();
+    this.messageClassifier( (msg) => 1 );// change this
     // chat.joinGroup(this.GUID)
   }
 render() {
